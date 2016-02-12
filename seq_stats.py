@@ -127,26 +127,28 @@ def calcStats(lengths):
 
 	return(total_seq, total_Mb, n50, median_len, iqr, GC_content, n90, seqs_1000, seqs_5000, Ns, l50)
 
+#----------------------------------------------------------------------------------------#
 
 if os.stat(str(sys.argv[1])).st_size == 0:
 	print('ERROR: Empty input file.')
 	sys.exit()
 
-fasta_suffix = ['fasta', 'fa', 'fna', 'faa', 'ffn', 'frn']
-fastq_suffix = ['fastq', 'fq']
-file_suffix = str(sys.argv[1]).split('.')[-1]
+input_file = open(sys.argv[1], 'r')
 
-if file_suffix in fasta_suffix:
+first_line = input_file.readline()
+
+if first_line[0] == '>':
 	file_type = 'Fasta'	
-	seq_lengths = readFasta(open(sys.argv[1], 'r'))  
+	seq_lengths = readFasta(input_file)  
 	
-elif file_suffix in fastq_suffix:	
+elif first_line[0] == '@':	
 	file_type = 'Fastq'
-	seq_lengths = readFastq(open(sys.argv[1], 'r'))
+	seq_lengths = readFastq(input_file)
 
 else:
 	print('ERROR: Invalid file format provided.')
 	sys.exit()
+
 
 stat_list = calcStats(seq_lengths)
 
