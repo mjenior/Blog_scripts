@@ -12,7 +12,3 @@ Subsamples paired and single-end fasta files to a given size.
 ###seq_stats.py
 
 Reports various statistics about a given fastq or fasta file.
-
-###interleave.py
-
-Interleaves paired-read fastas into a new file.
