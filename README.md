@@ -37,3 +37,8 @@ Annotates the query fasta file using tab-delimited BLAST output
 ###format_fasta.py
 
 Replaces spaces in fasta entry names with underscores and puts all sequence data on a single line per entry.
+
+
+###rarefy.py
+
+Subsamples a file with a single column of numbers to a given amount.
