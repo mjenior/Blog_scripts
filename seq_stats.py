@@ -28,7 +28,7 @@ def readFasta(FastaFile):
 	
 	lenList.append(len(tempseq))
 	
-	lenList.remove(0)
+	del lenList[0]
 	lenList.sort()
 	lenList.append(GC_count)
 	lenList.append(N_count)
