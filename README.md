@@ -1,7 +1,7 @@
 Blog_scripts
 ============
 
-Repository for python scripts I write/use during analysis.
+Repository for scripts I write/use.
 
 
 ###subsample_fasta.py
@@ -42,3 +42,8 @@ Replaces spaces in fasta entry names with underscores and puts all sequence data
 ###rarefy.py
 
 Subsamples a file with a single column of numbers to a given amount.
+
+
+###skills.R
+
+Creates the bar chart I use on my CV.
